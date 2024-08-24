@@ -24,11 +24,20 @@ export const ImgBrand = styled.img`
   height: 200px;
   margin: 10px auto;
 `;
-export const Title = styled.h1`
+
+export const TitleContainer = styled.div`
+  text-shadow: 1px 5px 5px rgba(0, 0, 0, 0.1);
+`;
+export const TitleGoldenDish = styled.h1`
   display: flex;
   text-align: center;
-  color: #fbec9b;
-  text-shadow: 2px 2px 2px #000;
+  font-weight: 800;
+  background-image: linear-gradient(to right, #e0ca3c 40%, #e36414);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+  filter: brightness(1.2);
 `;
 export const Description = styled.p`
   display: flex;

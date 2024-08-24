@@ -1,14 +1,17 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
-import "./styles/GlobalStyles";
+import { Menu } from "./pages/Menu/Menu";
 import { GlobalStyles } from "./styles/GlobalStyles";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <>
-      <Home />
+    <Router>
       <GlobalStyles />
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+      </Routes>
+    </Router>
   );
-}
-
+};
 export default App;

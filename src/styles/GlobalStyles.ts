@@ -21,4 +21,9 @@ button {
     transition: filter 0.3s;
   } */
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
