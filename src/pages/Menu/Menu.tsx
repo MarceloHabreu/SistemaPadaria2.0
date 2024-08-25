@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaCartShopping } from "react-icons/fa6";
-import { Modal } from "../../components/Modal/Modal";
+import { Modal } from "../../components/ModalMenu/Modal";
 import { Card } from "../../components/Card/Card";
 import { menuItems } from "../../data/MenuData";
 import * as S from "./styles";
@@ -54,7 +54,7 @@ export const Menu: React.FC = () => {
             {menuItems.map((category) => (
               <Card
                 key={category.id}
-                image={category.items[0].image} // Ajuste conforme necessário
+                image={category.capa}
                 title={category.name}
                 description={category.description}
                 onInspect={() => openModal(category)}

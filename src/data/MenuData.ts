@@ -1,4 +1,10 @@
 import paoFrances from "../assets/imgs/pãoFrancês.jpeg";
+import capaPaes from "../assets/imgs/capaPães.webp";
+import capaBolosTortas from "../assets/imgs/capaBoloTortas.webp";
+import capaCappuccinos from "../assets/imgs/capaCappuccinos.webp";
+import capaSalgados from "../assets/imgs/salgados.jpeg";
+import capaBebidas from "../assets/imgs/capaBebidas.jpg";
+import capaPaesDeQueijo from "../assets/imgs/capaPãesDeQueijo.jpg";
 import paoDoce from "../assets/imgs/pãoDocejpeg.jpeg";
 import paoRecheado from "../assets/imgs/pãoRecheado.jpeg";
 import boloChocolate from "../assets/imgs/bolodechocolate.jpeg";
@@ -26,6 +32,7 @@ export interface MenuItem {
 
 export interface Category {
   id: number;
+  capa: string;
   name: string;
   description: string;
   items: MenuItem[];
@@ -35,6 +42,7 @@ export const menuItems: Category[] = [
   {
     id: 1,
     name: "Pães",
+    capa: capaPaes,
     description:
       "Descubra a autenticidade e o sabor inigualável de nossos pães tradicionais. Oferecemos uma variedade.",
     items: [
@@ -61,6 +69,7 @@ export const menuItems: Category[] = [
   {
     id: 2,
     name: "Bolos e Tortas",
+    capa: capaBolosTortas,
     description:
       "Nossa confeitaria artesanal produz diariamente uma tentadora variedade de tortas e bolos.",
     items: [
@@ -87,6 +96,7 @@ export const menuItems: Category[] = [
   {
     id: 3,
     name: "Cappuccinos",
+    capa: capaCappuccinos,
     description:
       "Oferecemos cappuccinos cremosos e uma seleção refinada de chás, perfeitos para uma pausa relaxante no do dia.",
     items: [
@@ -113,6 +123,7 @@ export const menuItems: Category[] = [
   {
     id: 4,
     name: "Salgados",
+    capa: capaSalgados,
     description:
       "Descubra o sabor inconfundível de nossos salgados. Cada um é uma obra-prima culinária.",
     items: [
@@ -139,6 +150,7 @@ export const menuItems: Category[] = [
   {
     id: 5,
     name: "Gelados",
+    capa: capaBebidas,
     description:
       "Mergulhe numa onda de frescor com nossa seleção exclusiva de bebidas geladas. Ideal para se refrescar em um dia quente.",
     items: [
@@ -165,6 +177,7 @@ export const menuItems: Category[] = [
   {
     id: 6,
     name: "Pães de Queijo",
+    capa: capaPaesDeQueijo,
     description:
       "Venha saborear a tradição e o conforto em cada mordida com nossos pães de queijo, todos de alta qualidade.",
     items: [
