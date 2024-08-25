@@ -16,9 +16,14 @@ export const Modal: React.FC<ModalProps> = ({
   items,
 }) => {
   if (!isOpen) return null;
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
 
   return (
-    <S.ModalOverlay>
+    <S.ModalBackdrop onClick={handleBackdropClick}>
       <S.ModalContent>
         <S.ModalHeader>
           <S.ModalTitle>{category}</S.ModalTitle>
@@ -30,12 +35,12 @@ export const Modal: React.FC<ModalProps> = ({
               <S.ModalItemImage src={item.image} alt={item.name} />
               <S.ModalItemContent>
                 <S.ModalItemName>{item.name}</S.ModalItemName>
-                <S.ModalItemPrice>{item.price}</S.ModalItemPrice>
+                <S.ModalItemPrice>{item.price.toFixed(2)}</S.ModalItemPrice>
               </S.ModalItemContent>
             </S.ModalItem>
           ))}
         </S.ModalBody>
       </S.ModalContent>
-    </S.ModalOverlay>
+    </S.ModalBackdrop>
   );
 };

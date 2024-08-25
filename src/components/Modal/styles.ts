@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ModalOverlay = styled.div`
+export const ModalBackdrop = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -10,6 +10,7 @@ export const ModalOverlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
 `;
 
 export const ModalContent = styled.div`

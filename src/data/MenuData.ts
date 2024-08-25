@@ -27,6 +27,7 @@ export interface MenuItem {
 export interface Category {
   id: number;
   name: string;
+  description: string;
   items: MenuItem[];
 }
 
@@ -34,6 +35,8 @@ export const menuItems: Category[] = [
   {
     id: 1,
     name: "Pães",
+    description:
+      "Descubra a autenticidade e o sabor inigualável de nossos pães tradicionais. Oferecemos uma variedade.",
     items: [
       {
         id: 0,
@@ -58,6 +61,8 @@ export const menuItems: Category[] = [
   {
     id: 2,
     name: "Bolos e Tortas",
+    description:
+      "Nossa confeitaria artesanal produz diariamente uma tentadora variedade de tortas e bolos.",
     items: [
       {
         id: 3,
@@ -82,6 +87,8 @@ export const menuItems: Category[] = [
   {
     id: 3,
     name: "Cappuccinos",
+    description:
+      "Oferecemos cappuccinos cremosos e uma seleção refinada de chás, perfeitos para uma pausa relaxante no do dia.",
     items: [
       {
         id: 6,
@@ -106,6 +113,8 @@ export const menuItems: Category[] = [
   {
     id: 4,
     name: "Salgados",
+    description:
+      "Descubra o sabor inconfundível de nossos salgados. Cada um é uma obra-prima culinária.",
     items: [
       {
         id: 9,
@@ -130,6 +139,8 @@ export const menuItems: Category[] = [
   {
     id: 5,
     name: "Gelados",
+    description:
+      "Mergulhe numa onda de frescor com nossa seleção exclusiva de bebidas geladas. Ideal para se refrescar em um dia quente.",
     items: [
       {
         id: 12,
@@ -154,6 +165,8 @@ export const menuItems: Category[] = [
   {
     id: 6,
     name: "Pães de Queijo",
+    description:
+      "Venha saborear a tradição e o conforto em cada mordida com nossos pães de queijo, todos de alta qualidade.",
     items: [
       {
         id: 15,

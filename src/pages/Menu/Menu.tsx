@@ -23,7 +23,7 @@ export const Menu: React.FC = () => {
   };
 
   return (
-    <>
+    <S.BodyContent>
       <S.Header>
         <S.Nav>
           <S.NavTitleContainer>
@@ -56,7 +56,7 @@ export const Menu: React.FC = () => {
                 key={category.id}
                 image={category.items[0].image} // Ajuste conforme necessário
                 title={category.name}
-                description="Descrição breve da categoria."
+                description={category.description}
                 onInspect={() => openModal(category)}
               />
             ))}
@@ -70,6 +70,6 @@ export const Menu: React.FC = () => {
         category={currentCategory}
         items={currentItems}
       />
-    </>
+    </S.BodyContent>
   );
 };

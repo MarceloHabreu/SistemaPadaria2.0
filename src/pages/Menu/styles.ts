@@ -3,6 +3,16 @@
 import styled from "styled-components";
 import fundoImg from "../../assets/imgs/fundo.jpeg";
 
+export const BodyContent = styled.div`
+  background-image: url(${fundoImg});
+  min-height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-bottom: 50px;
+`;
+
 export const Header = styled.header`
   background-color: #be6919;
 `;
@@ -67,14 +77,9 @@ export const Checkout = styled.button`
 `;
 
 export const Body = styled.body`
-  background-image: url(${fundoImg});
-  height: 140vh;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  position: absolute;
-  padding-bottom: 50px; /* Adiciona espaçamento para a parte inferior, ajustável conforme necessário */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const WrapperMenu = styled.div`
@@ -151,20 +156,22 @@ export const ModalButton = styled.button`
 export const CardContainer = styled.div`
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 4rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr); // 3 colunas no máximo
-  gap: 5rem;
-  padding: 1rem;
+  gap: 3rem;
   width: 100%;
-  box-sizing: border-box;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1098px) {
     grid-template-columns: repeat(2, 1fr); // 2 colunas em telas menores
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr; // 1 coluna em telas pequenas
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
