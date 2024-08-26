@@ -1,19 +1,13 @@
 import React from "react";
-import * as S from "./styles"; // Supondo que você vai criar estilos separados
+import * as S from "../stylesModalGeral/styles"; // Supondo que você tenha um arquivo de estilos
 
-interface ModalGeralProps {
+interface LoginProps {
   isOpen: boolean;
   onClose: () => void;
-  title?: string; // Título opcional
-  children: React.ReactNode; // Conteúdo genérico
+  title?: string;
 }
 
-export const ModalGeral: React.FC<ModalGeralProps> = ({
-  isOpen,
-  onClose,
-  title,
-  children,
-}) => {
+export const Signup: React.FC<LoginProps> = ({ isOpen, onClose, title }) => {
   if (!isOpen) return null;
 
   const handleBackdropClick = (e: React.MouseEvent) => {
@@ -26,7 +20,7 @@ export const ModalGeral: React.FC<ModalGeralProps> = ({
     <S.ModalBackdrop onClick={handleBackdropClick}>
       <S.ModalContent>
         {title && <S.ModalTitle>{title}</S.ModalTitle>}
-        <S.ModalBody>{children}</S.ModalBody>
+        <S.ModalBody></S.ModalBody>
         <S.ModalCloseButton onClick={onClose}>Fechar</S.ModalCloseButton>
       </S.ModalContent>
     </S.ModalBackdrop>

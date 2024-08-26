@@ -32,7 +32,6 @@ export const ModalTitle = styled.h2`
 
 export const ModalBody = styled.div`
   margin-bottom: 1.5rem;
-  /* Estilo adicional para o conteúdo do modal */
 `;
 
 export const ModalCloseButton = styled.button`
