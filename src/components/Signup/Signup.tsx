@@ -1,5 +1,6 @@
 import React from "react";
-import * as S from "../stylesModalGeral/styles"; // Supondo que você tenha um arquivo de estilos
+import * as S from "../stylesModalGeral/styles";
+import logo from "../../assets/imgs/logo.png";
 
 interface LoginProps {
   isOpen: boolean;
@@ -19,9 +20,25 @@ export const Signup: React.FC<LoginProps> = ({ isOpen, onClose, title }) => {
   return (
     <S.ModalBackdrop onClick={handleBackdropClick}>
       <S.ModalContent>
-        {title && <S.ModalTitle>{title}</S.ModalTitle>}
-        <S.ModalBody></S.ModalBody>
-        <S.ModalCloseButton onClick={onClose}>Fechar</S.ModalCloseButton>
+        <S.ModalHeader>
+          {title && (
+            <S.ModalTitle>
+              <S.ImgLogo src={logo} alt="LogoGoldenDish" />
+              {title}
+            </S.ModalTitle>
+          )}
+          <S.ModalCloseButton onClick={onClose}>X</S.ModalCloseButton>
+        </S.ModalHeader>
+        <S.ModalBody>
+          <S.ModalForm>
+            <S.FormLabel>Nome: </S.FormLabel>
+            <S.FormInput type="text" id="name" />
+            <S.FormLabel>E-mail: </S.FormLabel>
+            <S.FormInput type="email" id="email" />
+            <S.FormLabel>Senha: </S.FormLabel>
+            <S.FormInput type="password" id="senha" />
+          </S.ModalForm>
+        </S.ModalBody>
       </S.ModalContent>
     </S.ModalBackdrop>
   );

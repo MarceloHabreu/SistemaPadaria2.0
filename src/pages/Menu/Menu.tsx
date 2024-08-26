@@ -96,8 +96,12 @@ export const Menu: React.FC = () => {
         items={currentItems}
       />
 
-      <Login isOpen={isLoginOpen} onClose={closeModalGeral} title="Login" />
-      <Signup isOpen={isSignupOpen} onClose={closeModalGeral} title="Signup" />
+      <Login isOpen={isLoginOpen} onClose={closeModalGeral} title="Entrar" />
+      <Signup
+        isOpen={isSignupOpen}
+        onClose={closeModalGeral}
+        title="Cadastrar-se"
+      />
       <Cart showCart={showCart} onCloseCart={handleCloseCart} />
     </S.BodyContent>
   );
