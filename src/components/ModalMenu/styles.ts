@@ -31,6 +31,8 @@ export const ModalHeader = styled.div`
 
 export const ModalTitle = styled.h2`
   margin: 0;
+  color: #504f4f;
+  text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.2);
 `;
 
 export const CloseButton = styled.button`
@@ -65,9 +67,12 @@ export const ModalItemContent = styled.div`
 
 export const ModalItemName = styled.h3`
   margin: 0;
+  color: #ffa500;
+  text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.2);
 `;
 
 export const ModalItemPrice = styled.p`
   margin: 0;
-  color: gray;
+  color: #696969;
+  text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
 `;

@@ -10,8 +10,7 @@ export const Backdrop = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.2);
 `;
 
 export const HeaderCart = styled.header`
@@ -22,6 +21,7 @@ export const HeaderCart = styled.header`
 
 export const Content = styled.aside<ContainerProps>`
   position: fixed;
+  overflow: auto;
   top: 0;
   right: ${(props) => (props.showCart ? "0" : "-300px")};
   width: 300px;

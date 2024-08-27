@@ -158,12 +158,12 @@ export const CardContainer = styled.div`
   margin: 0 auto;
   padding: 0 4rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); // 3 colunas no máximo
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   width: 100%;
 
   @media (max-width: 1098px) {
-    grid-template-columns: repeat(2, 1fr); // 2 colunas em telas menores
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: 768px) {
