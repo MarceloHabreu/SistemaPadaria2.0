@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const ModalBackdrop = styled.div`
+interface ModalGeralProps {
+  isOpen: boolean;
+}
+
+export const ModalBackdrop = styled.div<ModalGeralProps>`
   position: fixed;
   top: 0;
   left: 0;
@@ -10,6 +14,9 @@ export const ModalBackdrop = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: ${(props) => (props.isOpen ? "1" : "0")};
+  visibility: ${(props) => (props.isOpen ? "visible" : "hidden")};
+  transition: opacity 0.5s, visibility 0.5s;
   z-index: 999;
 `;
 export const ModalHeader = styled.header`
@@ -25,7 +32,7 @@ export const ImgLogo = styled.img`
   margin: 10px auto;
 `;
 
-export const ModalContent = styled.div`
+export const ModalContent = styled.div<ModalGeralProps>`
   background: white;
   padding: 2rem;
   border-radius: 8px;
@@ -33,9 +40,10 @@ export const ModalContent = styled.div`
   width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
-  transition-delay: 0.5s;
+  transform: ${(props) =>
+    props.isOpen ? "translateY(0)" : "translateY(-100vh)"};
+  transition: transform 0.5s ease-in-out;
 `;
-
 export const ModalTitle = styled.h2`
   display: flex;
   align-items: center;

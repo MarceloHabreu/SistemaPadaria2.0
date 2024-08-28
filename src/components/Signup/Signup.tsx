@@ -9,8 +9,6 @@ interface LoginProps {
 }
 
 export const Signup: React.FC<LoginProps> = ({ isOpen, onClose, title }) => {
-  if (!isOpen) return null;
-
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -18,8 +16,8 @@ export const Signup: React.FC<LoginProps> = ({ isOpen, onClose, title }) => {
   };
 
   return (
-    <S.ModalBackdrop onClick={handleBackdropClick}>
-      <S.ModalContent>
+    <S.ModalBackdrop isOpen={isOpen} onClick={handleBackdropClick}>
+      <S.ModalContent isOpen={isOpen}>
         <S.ModalHeader>
           {title && (
             <S.ModalTitle>

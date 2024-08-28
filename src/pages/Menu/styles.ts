@@ -27,6 +27,21 @@ export const Nav = styled.nav`
   justify-content: space-between;
 `;
 
+export const NavIcon = styled.div`
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    color: #e0ca3c;
+    text-shadow: 1px 1px 15px;
+    display: block;
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+  }
+`;
+
 export const NavTitleContainer = styled.div`
   text-shadow: 1px 4px 5px rgba(0, 0, 0, 0.1);
 `;
@@ -47,12 +62,27 @@ export const NavTitle = styled.h1`
   }
 `;
 
-export const NavList = styled.ul`
+export const NavList = styled.ul<{ isVisible: boolean }>`
   list-style: none;
   font-weight: 500;
   font-size: 1.1rem;
   display: flex;
   gap: 1rem;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    background-color: #be6919;
+    width: 100%;
+    padding: 1rem;
+    transform: ${(props) =>
+      props.isVisible ? "translateY(0)" : "translateY(-20%)"};
+    opacity: ${(props) => (props.isVisible ? 1 : 0)};
+    pointer-events: ${(props) => (props.isVisible ? "auto" : "none")};
+  }
 `;
 
 export const NavItem = styled.li`
@@ -74,6 +104,10 @@ export const Checkout = styled.button`
   display: flex;
   align-items: center;
   gap: 6px;
+
+  @media (max-width: 768px) {
+    margin-right: 2.5rem;
+  }
 `;
 
 export const Body = styled.body`

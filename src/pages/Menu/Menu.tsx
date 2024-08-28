@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaCartShopping } from "react-icons/fa6";
+import { FaBars } from "react-icons/fa";
 import { Modal } from "../../components/ModalMenu/Modal";
 import { Card } from "../../components/Card/Card";
 import { menuItems } from "../../data/MenuData";
@@ -11,6 +12,8 @@ import { Signup } from "../../components/Signup/Signup";
 import { Cart } from "../../components/Cart/Cart";
 
 export const Menu: React.FC = () => {
+  const [isNavVisible, setIsNavVisible] = useState(true);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentCategory, setCurrentCategory] = useState("");
   const [currentItems, setCurrentItems] = useState<MenuItem[]>([]);
@@ -50,7 +53,11 @@ export const Menu: React.FC = () => {
           <S.NavTitleContainer>
             <S.NavTitle>Golden Dish</S.NavTitle>
           </S.NavTitleContainer>
-          <S.NavList>
+          <S.NavIcon onClick={() => setIsNavVisible(!isNavVisible)}>
+            {" "}
+            <FaBars />{" "}
+          </S.NavIcon>
+          <S.NavList isVisible={isNavVisible}>
             <Link to="/">
               <S.NavItem>Início</S.NavItem>
             </Link>

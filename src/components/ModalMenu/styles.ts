@@ -20,6 +20,8 @@ export const ModalContent = styled.div`
   max-width: 600px;
   padding: 20px;
   position: relative;
+  transition: 0.6s;
+  z-index: 1000;
 `;
 
 export const ModalHeader = styled.div`

@@ -4,19 +4,23 @@ interface ContainerProps {
   showCart: boolean;
 }
 
-export const Backdrop = styled.div`
+export const HeaderCart = styled.header`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+`;
+
+export const Backdrop = styled.div<ContainerProps>`
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
-`;
-
-export const HeaderCart = styled.header`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
+  opacity: ${(props) => (props.showCart ? "1" : "0")};
+  visibility: ${(props) => (props.showCart ? "visible" : "hidden")};
+  transition: opacity 0.5s, visibility 0.5s;
+  z-index: 999;
 `;
 
 export const Content = styled.aside<ContainerProps>`
@@ -29,7 +33,8 @@ export const Content = styled.aside<ContainerProps>`
   height: 100vh;
   padding: 2rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-  transition: right 0.5s;
+  transition: right 0.8s;
+  z-index: 1000;
 `;
 
 export const TitleCart = styled.h2``;

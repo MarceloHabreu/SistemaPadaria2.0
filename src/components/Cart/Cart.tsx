@@ -14,8 +14,6 @@ export const Cart: React.FC<CartProps> = ({ showCart, onCloseCart }) => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
 
-  if (!showCart) return null;
-
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onCloseCart();
@@ -23,7 +21,7 @@ export const Cart: React.FC<CartProps> = ({ showCart, onCloseCart }) => {
   };
 
   return (
-    <S.Backdrop onClick={handleBackdropClick}>
+    <S.Backdrop showCart={showCart} onClick={handleBackdropClick}>
       <S.Content showCart={showCart}>
         <S.HeaderCart>
           <S.TitleCart>Carrinho</S.TitleCart>
