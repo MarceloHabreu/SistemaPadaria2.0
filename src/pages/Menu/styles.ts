@@ -15,6 +15,8 @@ export const BodyContent = styled.div`
 
 export const Header = styled.header`
   background-color: #be6919;
+  position: fixed;
+  width: 100%;
 `;
 
 export const Nav = styled.nav`
@@ -79,7 +81,7 @@ export const NavList = styled.ul<{ isVisible: boolean }>`
     width: 100%;
     padding: 1rem;
     transform: ${(props) =>
-      props.isVisible ? "translateY(0)" : "translateY(-20%)"};
+      props.isVisible ? "translateY(0)" : "translateY(-40%)"};
     opacity: ${(props) => (props.isVisible ? 1 : 0)};
     pointer-events: ${(props) => (props.isVisible ? "auto" : "none")};
   }

@@ -8,7 +8,6 @@ import * as S from "./styles";
 import { useState } from "react";
 import { Category, MenuItem } from "../../data/MenuData";
 import { Login } from "../../components/Login/Login";
-import { Signup } from "../../components/Signup/Signup";
 import { Cart } from "../../components/Cart/Cart";
 
 export const Menu: React.FC = () => {
@@ -18,22 +17,20 @@ export const Menu: React.FC = () => {
   const [currentCategory, setCurrentCategory] = useState("");
   const [currentItems, setCurrentItems] = useState<MenuItem[]>([]);
 
+  const [user, setUser] = useState<{ name: string } | null>(null);
+
   const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const [isSignupOpen, setIsSignupOpen] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const handleCloseCart = () => setShowCart(false);
 
   const openModalGeral = (modalType: string) => {
     if (modalType === "login") {
       setIsLoginOpen(true);
-    } else if (modalType === "signup") {
-      setIsSignupOpen(true);
     }
   };
 
   const closeModalGeral = () => {
     setIsLoginOpen(false);
-    setIsSignupOpen(false);
   };
 
   const openModal = (category: Category) => {
@@ -62,12 +59,18 @@ export const Menu: React.FC = () => {
               <S.NavItem>Início</S.NavItem>
             </Link>
             <S.NavItem>Sobre</S.NavItem>
-            <S.NavItem onClick={() => openModalGeral("signup")}>
-              Cadastre-se
-            </S.NavItem>
-            <S.NavItem onClick={() => openModalGeral("login")}>
-              Entrar
-            </S.NavItem>
+            {user ? (
+              <>
+                <S.NavItem>Bem-vindo, {user.name}!</S.NavItem>
+                <S.NavItem onClick={() => setUser(null)}>Sair</S.NavItem>
+              </>
+            ) : (
+              <>
+                <S.NavItem onClick={() => openModalGeral("login")}>
+                  Entrar
+                </S.NavItem>
+              </>
+            )}
           </S.NavList>
           <S.Checkout onClick={() => setShowCart(!showCart)}>
             <FaCartShopping /> Finalizar Pedido
@@ -77,7 +80,9 @@ export const Menu: React.FC = () => {
 
       <S.Body>
         <S.WrapperMenu>
-          <S.TitleMenu>Bem-Vindo ao menu da Golden Dish</S.TitleMenu>
+          <S.TitleMenu>
+            Bem-Vindo {user?.name} ao menu da Golden Dish
+          </S.TitleMenu>
           <S.DescriptionMenu>
             Entre no delicioso mundo dos sabores tradicionais com a nossa
             padaria, onde cada aroma é uma história e cada sabor uma memória.
@@ -103,11 +108,11 @@ export const Menu: React.FC = () => {
         items={currentItems}
       />
 
-      <Login isOpen={isLoginOpen} onClose={closeModalGeral} title="Entrar" />
-      <Signup
-        isOpen={isSignupOpen}
+      <Login
+        isOpen={isLoginOpen}
         onClose={closeModalGeral}
-        title="Cadastrar-se"
+        title="Entrar"
+        setUser={setUser}
       />
       <Cart showCart={showCart} onCloseCart={handleCloseCart} />
     </S.BodyContent>

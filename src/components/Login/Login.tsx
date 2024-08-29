@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "../stylesModalGeral/styles";
 import logo from "../../assets/imgs/logo.png";
 
@@ -6,13 +6,27 @@ interface LoginProps {
   isOpen: boolean;
   onClose: () => void;
   title?: string;
+  setUser: (user: { name: string }) => void;
 }
 
-export const Login: React.FC<LoginProps> = ({ isOpen, onClose, title }) => {
+export const Login: React.FC<LoginProps> = ({
+  isOpen,
+  onClose,
+  title,
+  setUser,
+}) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
+  };
+  const handleSignup = (e: React.FormEvent) => {
+    e.preventDefault();
+    setUser({ name });
+    onClose();
   };
 
   return (
@@ -27,7 +41,41 @@ export const Login: React.FC<LoginProps> = ({ isOpen, onClose, title }) => {
           )}
           <S.ModalCloseButton onClick={onClose}>X</S.ModalCloseButton>
         </S.ModalHeader>
-        <S.ModalBody></S.ModalBody>
+        <S.ModalBody>
+          <S.ModalForm onSubmit={handleSignup}>
+            <S.DivForm>
+              <S.FormLabel>Nome: </S.FormLabel>
+              <S.FormInput
+                type="text"
+                id="name"
+                placeholder="Seu nome..."
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </S.DivForm>
+            <S.DivForm>
+              <S.FormLabel>E-mail: </S.FormLabel>
+              <S.FormInput
+                type="email"
+                id="email"
+                placeholder="Seu e-mail..."
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </S.DivForm>
+            <S.DivForm>
+              <S.FormLabel>Senha: </S.FormLabel>
+              <S.FormInput
+                type="password"
+                id="senha"
+                placeholder="Sua senha..."
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+              />
+            </S.DivForm>
+            <S.ButtonLoginSinup type="submit">Cadastrar</S.ButtonLoginSinup>
+          </S.ModalForm>
+        </S.ModalBody>
       </S.ModalContent>
     </S.ModalBackdrop>
   );
