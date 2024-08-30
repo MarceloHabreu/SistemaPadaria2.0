@@ -29,19 +29,28 @@ export const Cart: React.FC<CartProps> = ({ showCart, onCloseCart }) => {
         </S.HeaderCart>
         <S.BodyCart>
           {cartItems.map((item) => (
-            <div key={item.id}>
-              <span>{item.name}</span>
-              <span>R$ {item.price.toFixed(2)}</span>
-              <div>
-                <button onClick={() => dispatch(decreaseQuantity(item.id))}>
-                  <FaMinus />
-                </button>
-                <span>{item.quantity}</span>
-                <button onClick={() => dispatch(increaseQuantity(item.id))}>
-                  <FaPlus />
-                </button>
-              </div>
-            </div>
+            <S.ContainerCartItems key={item.id}>
+              <S.WrapperImg_Name>
+                <S.ImageItems src={item.image} alt={item.name} />
+                <S.SpanNameItem>{item.name}</S.SpanNameItem>
+              </S.WrapperImg_Name>
+              <S.WrapperPrice_Buttons>
+                <S.SpanPriceItem>R$ {item.price.toFixed(2)}</S.SpanPriceItem>
+                <S.WrapperButtons>
+                  <S.Buttons
+                    onClick={() => dispatch(decreaseQuantity(item.id))}
+                  >
+                    <FaMinus />
+                  </S.Buttons>
+                  <S.SpanQuantity>{item.quantity}</S.SpanQuantity>
+                  <S.Buttons
+                    onClick={() => dispatch(increaseQuantity(item.id))}
+                  >
+                    <FaPlus />
+                  </S.Buttons>
+                </S.WrapperButtons>
+              </S.WrapperPrice_Buttons>
+            </S.ContainerCartItems>
           ))}
         </S.BodyCart>
         <S.CartTotal>

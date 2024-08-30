@@ -123,6 +123,8 @@ export const WrapperMenu = styled.div`
 `;
 
 export const TitleMenu = styled.h2`
+  margin-top: 3rem;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
   font-size: 2rem;
   color: #fff;
   text-align: center;
@@ -132,6 +134,7 @@ export const DescriptionMenu = styled.p`
   font-size: 1.1rem;
   color: #fff;
   text-align: center;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
   margin: 1rem auto;
   max-width: 800px;
 `;

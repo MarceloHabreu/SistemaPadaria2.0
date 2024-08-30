@@ -17,7 +17,7 @@ export const ModalContent = styled.div`
   background: white;
   border-radius: 8px;
   width: 80%;
-  max-width: 600px;
+  max-width: 350px;
   padding: 20px;
   position: relative;
   transition: 0.6s;
@@ -64,7 +64,11 @@ export const ModalItemImage = styled.img`
 
 export const ModalItemContent = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 `;
 
 export const ModalItemName = styled.h3`
@@ -75,6 +79,29 @@ export const ModalItemName = styled.h3`
 
 export const ModalItemPrice = styled.p`
   margin: 0;
-  color: #696969;
+  font-weight: 400;
   text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+`;
+
+export const WrapperButtons = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 15px;
+  border: 1px solid;
+  width: 50%;
+`;
+
+export const Buttons = styled.button`
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  font-size: 12px;
+`;
+
+export const SpanQuantity = styled.span`
+  margin: 0 0.4rem;
+  font-weight: bold;
 `;

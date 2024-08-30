@@ -37,10 +37,16 @@ export const Content = styled.aside<ContainerProps>`
   z-index: 1000;
 `;
 
-export const TitleCart = styled.h2``;
+export const TitleCart = styled.h2`
+  color: #504f4f;
+  text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.2);
+`;
 
 export const BodyCart = styled.div`
   margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 `;
 
 export const CloseButtonCart = styled.button`
@@ -54,6 +60,69 @@ export const CloseButtonCart = styled.button`
   display: flex;
   align-items: center;
   gap: 0.3rem;
+`;
+
+export const ContainerCartItems = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 0.5rem;
+`;
+export const WrapperImg_Name = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const WrapperPrice_Buttons = styled.div`
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  width: 35%;
+`;
+
+export const ImageItems = styled.img`
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  max-width: 90px;
+  max-height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+`;
+
+export const SpanNameItem = styled.span`
+  text-align: center;
+  max-width: 100px;
+  font-weight: 500;
+  color: #ffa500;
+  text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.4);
+`;
+
+export const SpanPriceItem = styled.span`
+  text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+`;
+
+export const WrapperButtons = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 15px;
+  border: 1px solid;
+`;
+
+export const Buttons = styled.button`
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  font-size: 12px;
+`;
+
+export const SpanQuantity = styled.span`
+  margin: 0 0.4rem;
+  font-weight: bold;
 `;
 
 export const CartTotal = styled.strong``;
