@@ -5,7 +5,8 @@ const Footer: React.FC = () => {
     <S.Footer>
       <S.FooterContent>
         <S.FooterText>
-          © 2024 Site Padaria Golden Dish. Todos os direitos reservados.
+          © 2024 Site Padaria Golden Dish. Todos os direitos reservados
+          MarceloHabreu.
         </S.FooterText>
       </S.FooterContent>
     </S.Footer>

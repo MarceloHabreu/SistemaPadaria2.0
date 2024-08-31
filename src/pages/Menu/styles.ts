@@ -10,7 +10,6 @@ export const BodyContent = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  padding-bottom: 1rem;
   margin-bottom: 0;
 `;
 
@@ -50,9 +49,9 @@ export const NavTitleContainer = styled.div`
 `;
 
 export const NavTitle = styled.h1`
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  background-image: linear-gradient(to right, #e0ca3c 40%, #e36414);
+  background-image: linear-gradient(to bottom, #e0ca3c 50%, #e36414);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -32,7 +32,7 @@ export const TitleGoldenDish = styled.h1`
   display: flex;
   text-align: center;
   font-weight: 800;
-  background-image: linear-gradient(to right, #e0ca3c 40%, #e36414);
+  background-image: linear-gradient(to bottom, #e0ca3c 40%, #e36414);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

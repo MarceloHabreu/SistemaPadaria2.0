@@ -60,7 +60,9 @@ export const Menu: React.FC = () => {
               <Link to="/">
                 <S.NavItem>Início</S.NavItem>
               </Link>
-              <S.NavItem>Sobre</S.NavItem>
+              <Link to="/about">
+                <S.NavItem>Sobre</S.NavItem>
+              </Link>
               {user ? (
                 <>
                   <S.NavItem>Bem-vindo, {user.name}!</S.NavItem>
@@ -117,8 +119,8 @@ export const Menu: React.FC = () => {
           setUser={setUser}
         />
         <Cart showCart={showCart} onCloseCart={handleCloseCart} />
+        <Footer />
       </S.BodyContent>
-      <Footer />
     </>
   );
 };
