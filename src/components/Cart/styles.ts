@@ -38,7 +38,7 @@ export const Content = styled.aside<ContainerProps>`
 `;
 
 export const TitleCart = styled.h2`
-  color: #504f4f;
+  color: #333;
   text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.2);
 `;
 
@@ -69,6 +69,8 @@ export const ContainerCartItems = styled.div`
   border: 1px solid #ccc;
   border-radius: 30px;
   padding: 0.5rem;
+  background-color: #ccc;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 `;
 export const WrapperImg_Name = styled.div`
   display: flex;
@@ -81,6 +83,11 @@ export const WrapperPrice_Buttons = styled.div`
   width: 35%;
 `;
 
+export const WrapperImg_Trash = styled.div`
+  display: flex;
+  gap: 5px;
+`;
+
 export const ImageItems = styled.img`
   margin: 0 auto;
   width: 100%;
@@ -91,9 +98,21 @@ export const ImageItems = styled.img`
   border-radius: 8px;
 `;
 
+export const ButtonTrash = styled.span`
+  color: red;
+  cursor: pointer;
+  height: 100%;
+
+  &:hover {
+    filter: brightness(1.5);
+    transition: filter 0.3s;
+  }
+`;
+
 export const SpanNameItem = styled.span`
   text-align: center;
-  max-width: 100px;
+  margin-right: 5px;
+  max-width: 80px;
   font-weight: 500;
   color: #ffa500;
   text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.4);

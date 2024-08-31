@@ -1,9 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/Cart/store";
-import { increaseQuantity, decreaseQuantity } from "../../redux/Cart/cartSlice";
+import {
+  increaseQuantity,
+  decreaseQuantity,
+  removeItem,
+} from "../../redux/Cart/cartSlice";
 import * as S from "./styles";
-import { FaMinus, FaPlus } from "react-icons/fa";
+import { FaMinus, FaPlus, FaTrashAlt } from "react-icons/fa";
 
 interface CartProps {
   showCart: boolean;
@@ -31,7 +35,12 @@ export const Cart: React.FC<CartProps> = ({ showCart, onCloseCart }) => {
           {cartItems.map((item) => (
             <S.ContainerCartItems key={item.id}>
               <S.WrapperImg_Name>
-                <S.ImageItems src={item.image} alt={item.name} />
+                <S.WrapperImg_Trash>
+                  <S.ImageItems src={item.image} alt={item.name} />
+                  <S.ButtonTrash onClick={() => dispatch(removeItem(item.id))}>
+                    <FaTrashAlt />
+                  </S.ButtonTrash>
+                </S.WrapperImg_Trash>
                 <S.SpanNameItem>{item.name}</S.SpanNameItem>
               </S.WrapperImg_Name>
               <S.WrapperPrice_Buttons>

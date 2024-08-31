@@ -16,10 +16,6 @@ Body, button, input {
 button {
   cursor: pointer;
 
-  /* &:hover {
-    filter: brightness(1.2);
-    transition: filter 0.3s;
-  } */
 }
 
 a {

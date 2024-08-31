@@ -10,7 +10,8 @@ export const BodyContent = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  padding-bottom: 50px;
+  padding-bottom: 1rem;
+  margin-bottom: 0;
 `;
 
 export const Header = styled.header`
