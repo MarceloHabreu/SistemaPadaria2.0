@@ -8,6 +8,7 @@ import {
 } from "../../redux/Cart/cartSlice";
 import * as S from "./styles";
 import { FaMinus, FaPlus, FaTrashAlt } from "react-icons/fa";
+import { CheckoutButton } from "../CheckoutButton/CheckoutButton";
 
 interface CartProps {
   showCart: boolean;
@@ -67,6 +68,7 @@ export const Cart: React.FC<CartProps> = ({ showCart, onCloseCart }) => {
           {cartItems
             .reduce((total, item) => total + item.price * item.quantity, 0)
             .toFixed(2)}
+          <CheckoutButton />
         </S.CartTotal>
       </S.Content>
     </S.Backdrop>

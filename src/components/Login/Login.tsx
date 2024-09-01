@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as S from "../stylesModalGeral/styles";
+import * as S from "./styles";
 import logo from "../../assets/imgs/logo.png";
 
 interface LoginProps {

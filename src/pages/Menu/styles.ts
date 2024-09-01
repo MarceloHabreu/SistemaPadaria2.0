@@ -70,7 +70,9 @@ export const NavList = styled.ul<{ isVisible: boolean }>`
   font-size: 1.1rem;
   display: flex;
   gap: 1rem;
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.5s ease-in-out, max-height 0.6s ease-in-out;
+  max-height: ${(props) => (props.isVisible ? "500px" : "0px")};
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -80,10 +82,6 @@ export const NavList = styled.ul<{ isVisible: boolean }>`
     background-color: #be6919;
     width: 100%;
     padding: 1rem;
-    transform: ${(props) =>
-      props.isVisible ? "translateY(0)" : "translateY(-40%)"};
-    opacity: ${(props) => (props.isVisible ? 1 : 0)};
-    pointer-events: ${(props) => (props.isVisible ? "auto" : "none")};
   }
 `;
 

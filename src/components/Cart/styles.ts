@@ -144,4 +144,19 @@ export const SpanQuantity = styled.span`
   font-weight: bold;
 `;
 
-export const CartTotal = styled.strong``;
+export const CartTotal = styled.strong`
+  display: flex;
+  button {
+    background-color: #e0ca3c;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    filter: brightness(1.1);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      filter: brightness(1);
+      transition: filter 0.3s;
+    }
+  }
+`;
