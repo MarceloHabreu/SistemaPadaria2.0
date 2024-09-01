@@ -90,6 +90,7 @@ export const WrapperButtons = styled.div`
   background-color: transparent;
   border-radius: 15px;
   border: 1px solid;
+  background-color: #e0ca3c;
   width: 50%;
 `;
 

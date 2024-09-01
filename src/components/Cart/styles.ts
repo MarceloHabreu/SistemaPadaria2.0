@@ -114,7 +114,7 @@ export const SpanNameItem = styled.span`
   margin-right: 5px;
   max-width: 80px;
   font-weight: 500;
-  color: #ffa500;
+  color: #4b3a28;
   text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.4);
 `;
 
@@ -128,6 +128,7 @@ export const WrapperButtons = styled.div`
   align-items: center;
   background-color: transparent;
   border-radius: 15px;
+  background-color: #e0ca3c;
   border: 1px solid;
 `;
 
@@ -147,11 +148,12 @@ export const SpanQuantity = styled.span`
 export const CartTotal = styled.strong`
   display: flex;
   button {
-    background-color: #e0ca3c;
+    background-color: #e36414;
     border: none;
     border-radius: 8px;
     color: #fff;
-    filter: brightness(1.1);
+    font-weight: 500;
+    filter: brightness(1.2);
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 
     &:hover {

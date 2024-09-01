@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./styles";
 import logo from "../../assets/imgs/logo.png";
 
@@ -23,11 +23,20 @@ export const Login: React.FC<LoginProps> = ({
       onClose();
     }
   };
-  const handleSignup = (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    setUser({ name });
+    const user = { name, email };
+    setUser(user);
+    localStorage.setItem("user", JSON.stringify(user));
     onClose();
   };
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  });
 
   return (
     <S.ModalBackdrop isOpen={isOpen} onClick={handleBackdropClick}>
@@ -42,7 +51,7 @@ export const Login: React.FC<LoginProps> = ({
           <S.ModalCloseButton onClick={onClose}>X</S.ModalCloseButton>
         </S.ModalHeader>
         <S.ModalBody>
-          <S.ModalForm onSubmit={handleSignup}>
+          <S.ModalForm onSubmit={handleLogin}>
             <S.DivForm>
               <S.FormLabel>Nome: </S.FormLabel>
               <S.FormInput

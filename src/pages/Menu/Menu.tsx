@@ -12,7 +12,7 @@ import { Cart } from "../../components/Cart/Cart";
 import Footer from "../../components/Footer/Footer";
 
 export const Menu: React.FC = () => {
-  const [isNavVisible, setIsNavVisible] = useState(true);
+  const [isNavVisible, setIsNavVisible] = useState(false);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentCategory, setCurrentCategory] = useState("");
