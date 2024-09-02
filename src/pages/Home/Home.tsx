@@ -14,10 +14,9 @@ export const Home: React.FC = () => {
           Delicie-se com nossos pães frescos e saborosos.
         </S.Description>
         <S.WrapperButtons>
-          <Link to="/Menu">
+          <Link to="/menu">
             <S.BtnMenu>Menu</S.BtnMenu>
           </Link>
-          <S.BtnContact>Contato</S.BtnContact>
         </S.WrapperButtons>
       </S.Container>
     </S.Body>

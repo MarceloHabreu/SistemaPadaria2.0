@@ -25,6 +25,10 @@ export const Login: React.FC<LoginProps> = ({
   };
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!name || !email || !senha) {
+      alert("Todos os campos são obrigatórios!!");
+      return;
+    }
     const user = { name, email };
     setUser(user);
     localStorage.setItem("user", JSON.stringify(user));
@@ -36,7 +40,15 @@ export const Login: React.FC<LoginProps> = ({
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
-  });
+  }, [setUser]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setName("");
+      setEmail("");
+      setSenha("");
+    }
+  }, [isOpen]);
 
   return (
     <S.ModalBackdrop isOpen={isOpen} onClick={handleBackdropClick}>

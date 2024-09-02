@@ -5,7 +5,7 @@ import { Modal } from "../../components/ModalMenu/Modal";
 import { Card } from "../../components/Card/Card";
 import { menuItems } from "../../data/MenuData";
 import * as S from "./styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Category, MenuItem } from "../../data/MenuData";
 import { Login } from "../../components/Login/Login";
 import { Cart } from "../../components/Cart/Cart";
@@ -19,6 +19,10 @@ export const Menu: React.FC = () => {
   const [currentItems, setCurrentItems] = useState<MenuItem[]>([]);
 
   const [user, setUser] = useState<{ name: string } | null>(null);
+  const handleLogout = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+  };
 
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [showCart, setShowCart] = useState(false);
@@ -43,6 +47,12 @@ export const Menu: React.FC = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   return (
     <>
@@ -66,7 +76,7 @@ export const Menu: React.FC = () => {
               {user ? (
                 <>
                   <S.NavItem>Bem-vindo, {user.name}!</S.NavItem>
-                  <S.NavItem onClick={() => setUser(null)}>Sair</S.NavItem>
+                  <S.NavItem onClick={handleLogout}>Sair</S.NavItem>
                 </>
               ) : (
                 <>
