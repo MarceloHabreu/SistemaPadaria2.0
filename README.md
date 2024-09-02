@@ -1,50 +1,94 @@
-# React + TypeScript + Vite
+# Golden Dish - Padaria Online
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Implantação do projeto
+ **Link da Implantação**: [PadariaGoldenDish](https://padariagoldendish.vercel.app/).
 
-Currently, two official plugins are available:
+## Descrição
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O projeto **Golden Dish** é uma versão aprimorada de um site anteriormente desenvolvido com HTML, CSS e JavaScript puro. Originalmente criado como um desafio acadêmico para um trabalho de faculdade, o objetivo era entregar um website funcional e fácil de usar para uma padaria. Após alguns meses de aprendizado e prática, decidi refazer o projeto utilizando **React** e **TypeScript** para aprimorar minhas habilidades em desenvolvimento front-end.
 
-## Expanding the ESLint configuration
+O objetivo inicial foi treinar o uso de diversas tecnologias e conceitos, como:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: Com hooks como `useState` e `useEffect`
+- **TypeScript**: Tipagens para garantir maior segurança e previsibilidade
+- **Redux**: Gerenciamento de estado global
+- **Styled-Components**: Estilização dinâmica de componentes
+- **React Router**: Navegação entre páginas
 
-- Configure the top-level `parserOptions` property like this:
+Embora o projeto pudesse ter mais aperfeiçoamentos, é um reflexo do meu progresso contínuo e um testemunho das minhas habilidades em desenvolvimento web. Estou sempre buscando melhorar e expandir meus conhecimentos.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Funcionalidades
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Navegação Responsiva**: Com menus acessíveis em dispositivos móveis e desktop.
+- **Autenticação**: Login e logout de usuários, com armazenamento de sessão.
+- **Gerenciamento de Carrinho**: Adição e remoção de itens, com visualização do carrinho.
+- **Modais**: Para visualização e inspeção de categorias de itens do menu.
+- **Página Inicial**: Apresenta uma introdução à padaria e navegação para outras seções.
+- **Página de Menu**: Exibe categorias de produtos e detalhes de cada item.
+- **Página Sobre**: Informações sobre a padaria e sua história.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Estrutura do Projeto
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+O projeto está organizado da seguinte forma:
+
+- **`/src/assets`**: Contém todas as imagens utilizadas.
+- **`/src/components`**: Componentes reutilizáveis da aplicação.
+- **`/src/data`**: Dados do menu de itens utilizados.
+- **`/src/pages`**: Contém as páginas principais do site.
+- **`/src/redux`**: Configuração do Redux para gerenciamento de estado.
+- **`/src/styles`**: Arquivos de estilização global e específica dos componentes.
+
+## Páginas
+
+### Página Inicial
+
+A página inicial dá as boas-vindas ao usuário e fornece uma breve descrição da padaria. Inclui navegação para outras páginas e um botão para visualizar o menu.
+
+### Página de Menu
+
+Apresenta as categorias de itens disponíveis na padaria, com a possibilidade de visualizar detalhes e adicionar itens ao carrinho.
+
+### Página Sobre
+
+Fornece informações adicionais sobre a padaria, sua história e o que a torna especial.
+
+## Tecnologias Utilizadas
+
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática.
+- **Redux**: Biblioteca para gerenciamento de estado global.
+- **Styled-Components**: Biblioteca para estilização de componentes em React.
+- **React Router**: Biblioteca para navegação entre páginas em uma aplicação React.
+- **Vite**: Ferramenta de build para desenvolvimento rápido com Hot Module Replacement (HMR).
+
+## Instalação e Execução
+
+1. **Clone o repositório**:
+
+   ```bash
+   git clone https://github.com/usuario/golden-dish.git
+   
+2. **Navegue até o diretório do projeto:**:
+
+   ```bash
+   cd golden-dish
+
+3. **Instale as dependências:**:
+
+   ```bash
+   yarn install
+
+4. **Inicie o servidor de desenvolvimento:**:
+
+   ```bash
+   yarn dev
+
+5. **Abra o navegador e acesse**:
+
+   ```bash
+   http://localhost:3000
+
+## Licença
+- **Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.**
+## Contato
+- **Se você tiver alguma dúvida ou sugestão sobre o projeto, sinta-se à vontade para me contatar por e-mail: [marcelohenriqueas17@gmail.com](mailto:marcelohenriqueas17@gmail.com) ou por WhatsApp: [99988-1050](https://wa.me/5511999881050).**
