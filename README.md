@@ -5,7 +5,7 @@
 
 ## Descrição
 
-O projeto **Golden Dish** é uma versão aprimorada de um site anteriormente desenvolvido com HTML, CSS e JavaScript puro. Originalmente criado como um desafio acadêmico para um trabalho de faculdade, o objetivo era entregar um website funcional e fácil de usar para uma padaria. Após alguns meses de aprendizado e prática, decidi refazer o projeto utilizando **React** e **TypeScript** para aprimorar minhas habilidades em desenvolvimento front-end.
+O projeto **Golden Dish** é uma versão aprimorada de um site anteriormente desenvolvido com HTML, CSS, JavaScript e o framework Bootstrap. Originalmente criado como um desafio acadêmico para um trabalho de faculdade, o objetivo era entregar um website funcional e fácil de usar para uma padaria. Após alguns meses de aprendizado e prática, decidi refazer o projeto utilizando **React** e **TypeScript** para aprimorar minhas habilidades em desenvolvimento front-end.
 
 O objetivo inicial foi treinar o uso de diversas tecnologias e conceitos, como:
 
