@@ -61,6 +61,28 @@ Fornece informações adicionais sobre a padaria, sua história e o que a torna 
 - **React Router**: Biblioteca para navegação entre páginas em uma aplicação React.
 - **Vite**: Ferramenta de build para desenvolvimento rápido com Hot Module Replacement (HMR).
 
+## 📸 Demonstração
+
+- Tela Inicial
+![Tela Inicial](https://github.com/MarceloHabreu/SistemaPadaria2.0/blob/main/screenshotsProject/Screenshot%202025-01-26%20180155.png)
+
+- Tela Menu
+![Tela Menu](https://github.com/MarceloHabreu/SistemaPadaria2.0/blob/main/screenshotsProject/Screenshot%202025-01-26%20180212.png)
+
+- Modal Inspecionar
+![Modal Inspecionar](https://github.com/MarceloHabreu/SistemaPadaria2.0/blob/main/screenshotsProject/Screenshot%202025-01-26%20180234.png)
+
+- Carrinho
+![Carrinho](https://github.com/MarceloHabreu/SistemaPadaria2.0/blob/main/screenshotsProject/Screenshot%202025-01-26%20180251.png)
+
+- Login
+![Login](https://github.com/MarceloHabreu/SistemaPadaria2.0/blob/main/screenshotsProject/Screenshot%202025-01-26%20180315.png)
+
+- Tela Sobre
+![Tela Sobre](https://github.com/MarceloHabreu/SistemaPadaria2.0/blob/main/screenshotsProject/Screenshot%202025-01-26%20180343.png)
+
+
+
 ## Instalação e Execução
 
 1. **Clone o repositório**:
